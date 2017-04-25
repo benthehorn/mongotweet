@@ -1,4 +1,5 @@
 .idea/
 public/vendor/
 node_modules/
+server/config/db.js
 

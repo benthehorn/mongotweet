@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb://localhost:27017/social_net';
+var dbURI = 'mongodb://fandul:metallica4life@ds117271.mlab.com:17271/social_net';
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {

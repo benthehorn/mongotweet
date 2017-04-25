@@ -7,11 +7,12 @@ var jwtConfig = require('../config/jwtConfig').jwtConfig;
 var jwt = require('jwt-simple');
 var sanitizeHtml = require('sanitize-html');
 var db = require('../config/db');
+var tweet = require('../models/social');
 
-
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+router.get('/one/', function (req, res, next) {
+  tweet.find({ user: '_TheSpecialOne_' }, function (err, data) {
+    res.send(data);
+  });
 });
-
 
 module.exports = router;
