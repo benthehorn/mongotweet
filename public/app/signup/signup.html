@@ -1,0 +1,23 @@
+<div class="container">
+    <h3>Add User</h3>
+</div>
+
+<div class="container">
+
+
+    <form ng-submit="addUser(newUser)" action="">
+
+
+        <div class="form-group">
+            <input type="text" id="userName" name="userName" class="form-control" placeholder="User Name"
+                   ng-model="newUser.userName"><br>
+        </div>
+        <div class="form-group">
+            <input type="text" id="password" name="password" class="form-control" placeholder="Password"
+                   ng-model="newUser.password"><br>
+        </div>
+        <button class="btn btn-primary" type="submit">Add User</button>
+
+
+    </form>
+</div>
