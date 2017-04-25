@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb://localhost:27017/seedAgain';
+var dbURI = 'mongodb://localhost:27017/social_net';
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {

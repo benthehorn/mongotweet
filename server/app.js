@@ -18,6 +18,7 @@ var jwt = require('jwt-simple');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var social = require('./routes/social');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use(passport.initialize());
 
 
 app.use('/users', users);
+app.use('/social', social);
 
 app.get('/*', function (req, res) {
 res.sendFile(path.join(__dirname, '/../public/index.html'))
