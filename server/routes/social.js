@@ -15,4 +15,12 @@ router.get('/one/', function (req, res, next) {
   });
 });
 
+router.get('/numberOfUsers', function (req, res, next) {
+  tweet.find().distinct('user').count(function (err, data) {
+    console.log(data);
+    res.json({ numberOfUsers: data });
+  });
+
+});
+
 module.exports = router;
