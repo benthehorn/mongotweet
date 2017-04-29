@@ -25,6 +25,10 @@ var Tweets = new Schema({
   },
   text: {
     type: String
+  },
+  mentions: {
+    type: [String],
+    required: false
   }
 });
 
