@@ -45,4 +45,14 @@ router.get('/negativeTweets', function (req, res, next) {
     });
 });
 
+router.get('/mostTweeters', function (req, res, next) {
+    tweet.aggregate([
+        { $group: { _id: '$user', count: { $sum: 1 } } },
+        { $sort: { count: -1 } },
+        { $limit: 10 }
+    ], function (err, data) {
+        res.json(data);
+      });
+  });
+
 module.exports = router;
