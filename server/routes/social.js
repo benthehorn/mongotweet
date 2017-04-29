@@ -24,6 +24,7 @@ router.get('/numberOfUsers', function (req, res, next) {
 });
 
 
+
 router.get('/positiveTweets', function (req, res, next) {
   tweet.aggregate([
     { $match: { polarity: 4 } },
@@ -34,6 +35,7 @@ router.get('/positiveTweets', function (req, res, next) {
     res.json(data);
   });
 });
+
 
 router.get('/userNames', function (req, res, next) {
   var mentions = [];
@@ -49,6 +51,7 @@ router.get('/userNames', function (req, res, next) {
 
     res.json(data);
   });
+
 });
 
 module.exports = router;
