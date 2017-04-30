@@ -1,3 +1,28 @@
-<h2>This is the view1 page.</h2>
+<p>These are the statistics we have gathered from the Tweeting database sample..</p>
 
-<h1>View1</h1>
+
+<h4> The total number of users is : <strong>{{numberOfUsers}}</strong></h4>
+
+<p>The users that mentioned the most other users are:</p>
+
+<div class="container">
+
+    <h4>Users Mentioned Table</h4>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number of Users Mentioned</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="mentioned in usersMentioned.data">
+            <td>{{mentioned._id}}</td>
+            <td>{{mentioned.size}}</td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
