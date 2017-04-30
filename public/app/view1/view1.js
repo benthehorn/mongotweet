@@ -11,6 +11,7 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', function ($http, $scope) {
   var numberOfUsers = 0;
   var usersMentioned = {};
+  $scope.loading = true;
   $http.get('/social/numberOfUsers')
     .then(function (data) {
       numberOfUsers = data.data.numberOfUsers;
@@ -27,5 +28,7 @@ angular.module('myApp.view1', ['ngRoute'])
     }, function (err) {
 
       console.log('Error : ' + err);
-    });
+    }).finally(function () {
+    $scope.loading = false;
+  });
 });
