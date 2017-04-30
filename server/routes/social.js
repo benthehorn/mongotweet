@@ -16,8 +16,7 @@ router.get('/one', function (req, res, next) {
 });
 
 router.get('/numberOfUsers', function (req, res, next) {
-  tweet.find().distinct('user').count(function (err, data) {
-    console.log(data);
+  tweet.distinct('user').count(function (err, data) {
     res.json({ numberOfUsers: data });
   });
 
@@ -37,7 +36,7 @@ router.get('/positiveTweets', function (req, res, next) {
 });
 
 
-router.get('/userNames', function (req, res, next) {
+router.get('/userNamesMentioned', function (req, res, next) {
   var mentions = [];
   //add mentions: {$mentions} to get the manes of the mentioned people
   tweet.aggregate([

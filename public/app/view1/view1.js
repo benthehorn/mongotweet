@@ -8,6 +8,24 @@ angular.module('myApp.view1', ['ngRoute'])
       });
     }])
 
-.controller('View1Ctrl', function () {
+.controller('View1Ctrl', function ($http, $scope) {
+  var numberOfUsers = 0;
+  var usersMentioned = {};
+  $http.get('/social/numberOfUsers')
+    .then(function (data) {
+      numberOfUsers = data.data.numberOfUsers;
+      $scope.numberOfUsers = numberOfUsers;
+    }, function (err) {
 
+      console.log('Error : ' + err);
+    });
+
+  $http.get('/social/userNamesMentioned')
+    .then(function (data) {
+      usersMentioned = data;
+      $scope.usersMentioned = usersMentioned;
+    }, function (err) {
+
+      console.log('Error : ' + err);
+    });
 });
