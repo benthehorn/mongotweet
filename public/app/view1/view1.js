@@ -13,6 +13,7 @@ angular.module('myApp.view1', ['ngRoute'])
   var usersMentioned = {};
   var positiveNegativeTweeters = [];
   var negativeTweeters = [];
+  var mostMentioned = [];
   $scope.loading = true;
   $scope.getNumberOfUsers = function () {
 
@@ -66,4 +67,16 @@ angular.module('myApp.view1', ['ngRoute'])
               console.log('Error : ' + err);
             });
     };
+
+  $scope.getMostMentioned = function () {
+
+    api.getMostMentioned()
+      .then(function (data) {
+        mostMentioned = data.data;
+        $scope.mostMentioned = mostMentioned;
+      }, function (err) {
+
+        console.log('Error : ', err);
+      });
+  };
 });
