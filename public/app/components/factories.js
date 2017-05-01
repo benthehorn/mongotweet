@@ -32,5 +32,29 @@ angular.module('myApp.factories', []).
           return $q.reject(rejection);
         }
       };
+    })
+    .factory('api', function ($http) {
+      function numberOfUsers() {
+        return $http.get('/social/numberOfUsers');
+      }
+
+      function getUserNamesMentioned() {
+        return $http.get('/social/userNamesMentioned');
+      }
+
+      function getPositiveTweeters() {
+        return $http.get('/social/positiveTweets');
+      }
+
+      function getNegativeTweeters() {
+        return $http.get('/social/negativeTweets');
+      }
+
+      return {
+        numberOfUsers: numberOfUsers,
+        getUserNamesMentioned: getUserNamesMentioned,
+        getPositiveTweeters: getPositiveTweeters,
+        getNegativeTweeters: getNegativeTweeters
+      };
     });
 

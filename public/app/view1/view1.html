@@ -1,12 +1,12 @@
 <p>These are the statistics we have gathered from the Tweeting database sample..</p>
 
-
+<button ng-click="getNumberOfUsers()" class="btn btn-default" type="button">Get number of users</button>
 <h4> The total number of users is : <strong>{{numberOfUsers}}</strong></h4>
 
-<p>The users that mentioned the most other users are:</p>
 
 <div class="container">
-
+<p>The users that mentioned the most other users are:</p>
+    <button ng-click="getUserNamesMentioned()" class="btn btn-default" type="button">Get mentioned users</button>
     <h4>Users Mentioned Table</h4>
 
     <table class="table table-bordered">
@@ -20,6 +20,31 @@
         <tr ng-repeat="mentioned in usersMentioned.data">
             <td>{{mentioned._id}}</td>
             <td>{{mentioned.size}}</td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <p>Top five positive and negative tweeters:</p>
+    <button ng-click="getPositiveTweeters()" class="btn btn-default" type="button">Get positive tweeters</button>
+    <button ng-click="getNegativeTweeters()" class="btn btn-default" type="button">Get negative tweeters</button>
+
+    <h4>{{element}} tweeters</h4>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>tweet count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="tweeters in positiveNegativeTweeters">
+            <td>{{tweeters._id}}</td>
+            <td>{{tweeters.count}}</td>
 
         </tr>
 
