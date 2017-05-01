@@ -20,7 +20,7 @@ Database is hosted in mlab, unfortunately free account have only 500 MB space, s
 Also because of the small capacity of the free database we couldn't add the mentions array to the collection, it was too big. So the 
 delpoyed version doesn't show any of the mentioned answers, we ran them locally.
 
-The files 1,2,3,4,5 and 6 .jpg have screen shots of our results. The methods we used are here:
+The files 1,2,4,5,6 and 7.jpg have screen shots of our results. The methods we used are here:
 
  Number of users:
  
