@@ -50,11 +50,16 @@ angular.module('myApp.factories', []).
         return $http.get('/social/negativeTweets');
       }
 
+      function getMostTweeters() {
+        return $http.get('/social/mostTweeters');
+      }
+
       return {
         numberOfUsers: numberOfUsers,
         getUserNamesMentioned: getUserNamesMentioned,
         getPositiveTweeters: getPositiveTweeters,
-        getNegativeTweeters: getNegativeTweeters
+        getNegativeTweeters: getNegativeTweeters,
+        getMostTweeters: getMostTweeters
       };
     });
 
