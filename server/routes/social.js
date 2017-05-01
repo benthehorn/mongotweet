@@ -73,6 +73,7 @@ router.get('/mostTweeters', function (req, res, next) {
 
 router.get('/mostMentionedUsers', function (req, res, next) {
   tweet.aggregate([
+    { $unwind: '$mentions' },
     { $group: { _id: '$mentions', count: { $sum: 1 } } },
     { $sort: { count: -1 } },
     { $limit: 5 }
