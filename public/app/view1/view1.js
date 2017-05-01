@@ -85,6 +85,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
     api.getMostMentioned()
       .then(function (data) {
+        console.log(data);
         mostMentioned = data.data;
         $scope.mostMentioned = mostMentioned;
       }, function (err) {

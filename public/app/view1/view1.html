@@ -29,6 +29,29 @@
 </div>
 
 <div class="container">
+    <p>The users that mentioned the most other users are:</p>
+    <button ng-click="getMostMentioned()" class="btn btn-default" type="button">Get most mentioned users</button>
+    <h4>Users Mentioned Table</h4>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number of mentions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="mentioned in mostMentioned">
+            <td>{{mentioned._id[0][0]}}</td>
+            <td>{{mentioned.count}}</td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
     <p>Top five positive, negative and top 10 active tweeters:</p>
     <button ng-click="getPositiveTweeters()" class="btn btn-default" type="button">Get positive tweeters</button>
     <button ng-click="getNegativeTweeters()" class="btn btn-default" type="button">Get negative tweeters</button>
