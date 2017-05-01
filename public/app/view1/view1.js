@@ -68,6 +68,19 @@ angular.module('myApp.view1', ['ngRoute'])
             });
     };
 
+  $scope.getMostTweeters = function () {
+
+      api.getMostTweeters()
+          .then(function (data) {
+              positiveNegativeTweeters = data.data;
+              $scope.positiveNegativeTweeters = positiveNegativeTweeters;
+              $scope.element = 'Top 10 active';
+            }, function (err) {
+
+              console.log('Error : ' + err);
+            });
+    };
+
   $scope.getMostMentioned = function () {
 
     api.getMostMentioned()

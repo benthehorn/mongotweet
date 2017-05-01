@@ -1,4 +1,5 @@
-<h4>These are the statistics we have gathered from the Tweeting database sample..</h4>
+
+<h2>These are the statistics we have gathered from the Tweeting database sample..</h2>
 
 <button ng-click="getNumberOfUsers()" class="btn btn-default" type="button">Get number of users</button>
 <h4> The total number of users is : <strong>{{numberOfUsers}}</strong></h4>
@@ -28,9 +29,10 @@
 </div>
 
 <div class="container">
-    <p>Top five positive and negative tweeters:</p>
+    <p>Top five positive, negative and top 10 active tweeters:</p>
     <button ng-click="getPositiveTweeters()" class="btn btn-default" type="button">Get positive tweeters</button>
     <button ng-click="getNegativeTweeters()" class="btn btn-default" type="button">Get negative tweeters</button>
+    <button ng-click="getMostTweeters()" class="btn btn-default" type="button">Get Top 10 tweeters</button>
 
     <h4>{{element}} tweeters</h4>
 
