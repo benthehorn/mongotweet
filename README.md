@@ -23,11 +23,13 @@ delpoyed version doesn't show any of the mentioned answers, we ran them locally.
 The files 1,2,3,4,5 and 6 .jpg have screen shots of our results. The methods we used are here:
 
  Number of users:
+ 
  tweet.distinct('user').exec(function (err, data) {
     res.json({ numberOfUsers: data.length });
   });
   
   Five most positive tweeters:
+  
   tweet.aggregate([
     { $match: { polarity: 4 } },
     { $group: { _id: '$user', count: { $sum: 1 } } },
@@ -38,6 +40,7 @@ The files 1,2,3,4,5 and 6 .jpg have screen shots of our results. The methods we 
   });
   
   Ten most mentioned users:
+  
   tweet.aggregate([
       { $unwind: '$mentions' },
       { $group: { _id: '$user',  size: { $sum: 1 } } },
@@ -51,6 +54,7 @@ The files 1,2,3,4,5 and 6 .jpg have screen shots of our results. The methods we 
   });
   
   Five most negative Tweeters:
+  
   tweet.aggregate([
       { $match: { polarity: 0 } },
       { $group: { _id: '$user', count: { $sum: 1 } } },
@@ -61,6 +65,7 @@ The files 1,2,3,4,5 and 6 .jpg have screen shots of our results. The methods we 
     });
     
   10 most frequent Tweeters:
+  
    tweet.aggregate([
         { $group: { _id: '$user', count: { $sum: 1 } } },
         { $sort: { count: -1 } },
@@ -70,6 +75,7 @@ The files 1,2,3,4,5 and 6 .jpg have screen shots of our results. The methods we 
       });
       
   5 most mentioned Tweeters:
+  
   tweet.aggregate([
     { $group: { _id: '$mentions', count: { $sum: 1 } } },
     { $sort: { count: -1 } },
