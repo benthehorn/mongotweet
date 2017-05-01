@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('myApp',[
+    'toastr',
     'ngRoute',
     'ngAnimate',
     'angular-jwt',
@@ -13,7 +14,9 @@ angular.module('myApp',[
     'myApp.factories',
     'myApp.filters',
     'myApp.view1',
-     'myApp.view2'
+     'myApp.view2',
+     'angular-loading-bar',
+
 ]).
 config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/view1'});
