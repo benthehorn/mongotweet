@@ -13,3 +13,6 @@ db.tweets.find().forEach(function(doc){
     });
     
     The database can now store the mentioned users in an array on each tweet.
+
+Deployed version is available on http://dbtweetexercise-benwebshop.rhcloud.com/#!/view1
+Database is hosted in mlab, unfortunately free account have only 500 MB space, so deployed collection consist only of 1048793 tweets.
